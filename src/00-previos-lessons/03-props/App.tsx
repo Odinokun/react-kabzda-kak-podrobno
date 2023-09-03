@@ -8,8 +8,8 @@ function App() {
       <PageTitle title='React kabzda kak podrobno!' />
       Article 1
       <Rating value={3} />
-      <Accordion title='Attordion #1' collapsed={false} />
-      <Accordion title='Attordion #2' collapsed={true} />
+      <Accordion title='Attordion #1' />
+      <Accordion title='Attordion #2' />
       Article 2
       <Rating value={0} />
       <Rating value={1} />
@@ -21,11 +21,7 @@ function App() {
   );
 }
 
-type PageTitlePropsType = {
-  title: string;
-};
-
-function PageTitle(props: PageTitlePropsType) {
+function PageTitle(props: any) {
   return <h1>{props.title}</h1>;
 }
 

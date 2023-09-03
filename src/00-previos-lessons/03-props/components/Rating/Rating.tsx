@@ -1,8 +1,4 @@
-type RatingPropsType = {
-  value: 0 | 1 | 2 | 3 | 4 | 5;
-};
-
-function Rating(props: RatingPropsType) {
+function Rating(props: any) {
   return (
     <div>
       <Star selected={true} />
@@ -14,11 +10,7 @@ function Rating(props: RatingPropsType) {
   );
 }
 
-type StarPropsType = {
-  selected: boolean;
-};
-
-function Star(props: StarPropsType) {
+function Star(props: any) {
   if (props.selected === true) {
     return (
       <span>
