@@ -1,5 +1,6 @@
 import './App.css';
 import Accordion from './components/Accordion/Accordion';
+import { OnOff } from './components/OnOff/OnOff';
 import Rating from './components/Rating/Rating';
 
 function App() {
@@ -10,6 +11,8 @@ function App() {
       <Rating value={3} />
       <Accordion title='Attordion #1' collapsed={false} />
       <Accordion title='Attordion #2' collapsed={true} />
+      <OnOff status={true} />
+      <OnOff status={false} />
       Article 2
       <Rating value={0} />
       <Rating value={1} />
