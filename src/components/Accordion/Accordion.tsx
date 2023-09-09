@@ -1,18 +1,19 @@
-import AccordionTitle from './AccordionTitle/AccordionTitle';
-import AccordionBody from './AccordionBody/AccordionBody';
-
 type AccordionPropsType = {
   title: string;
   collapsed: boolean;
 };
 
-function Accordion(props: AccordionPropsType) {
+export const Accordion = (props: AccordionPropsType) => {
   return (
     <>
-      <AccordionTitle title={props.title} />
-      {!props.collapsed && <AccordionBody />}
+      <h3>title={props.title}</h3>
+      {!props.collapsed && (
+        <ul>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+        </ul>
+      )}
     </>
   );
-}
-
-export default Accordion;
+};
