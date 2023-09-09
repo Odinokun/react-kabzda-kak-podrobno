@@ -2,7 +2,7 @@ type RatingPropsType = {
   value: 0 | 1 | 2 | 3 | 4 | 5;
 };
 
-function Rating(props: RatingPropsType) {
+export const Rating = (props: RatingPropsType) => {
   return (
     <div>
       <Star selected={true} />
@@ -12,7 +12,7 @@ function Rating(props: RatingPropsType) {
       <Star selected={false} />
     </div>
   );
-}
+};
 
 type StarPropsType = {
   selected: boolean;

@@ -1,19 +1,17 @@
 import './App.css';
-import Accordion from './components/Accordion/Accordion';
+import { Accordion } from './components/Accordion/Accordion';
 import { OnOff } from './components/OnOff/OnOff';
-import Rating from './components/Rating/Rating';
+import { Rating } from './components/Rating/Rating';
+import { UncontrolledAccordion } from './components/UncontrolledAccordion/UncontrolledAccordion';
 
 function App() {
   return (
     <div className='App'>
       <PageTitle title='React kabzda kak podrobno!' />
-      Article 1
-      <Rating value={3} />
-      <Accordion title='Attordion #1' collapsed={false} />
-      <Accordion title='Attordion #2' collapsed={true} />
-      <OnOff status={true} />
-      <OnOff status={false} />
-      Article 2
+      <Accordion title='Accordion #1' collapsed={true} />
+      <UncontrolledAccordion title='Uncontrolled Accordion #1' />
+      <OnOff />
+
       <Rating value={0} />
       <Rating value={1} />
       <Rating value={2} />
