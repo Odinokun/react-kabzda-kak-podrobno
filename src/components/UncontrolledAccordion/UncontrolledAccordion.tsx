@@ -1,26 +1,24 @@
-import { useState } from 'react';
+import { useState, FC } from 'react';
+import { UncontrolledAccordionBody } from './UncontrolledAccordionBody/UncontrolledAccordionBody';
+import { UncontrolledAccordionTitle } from './UncontrolledAccordionTitle/UncontrolledAccordionTitle';
 
-type AccordionPropsType = {
+interface IProps {
   title: string;
-};
+}
 
-export const UncontrolledAccordion = (props: AccordionPropsType) => {
+export const UncontrolledAccordion: FC<IProps> = ({ title }) => {
   const [collapsed, setCollapsed] = useState(true);
-
-  const onClickHandler = () => {
+  const onOffAccordion = () => {
     setCollapsed(!collapsed);
   };
 
   return (
     <>
-      <h3 onClick={onClickHandler}>{props.title}</h3>
-      {!collapsed && (
-        <ul>
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-        </ul>
-      )}
+      <UncontrolledAccordionTitle
+        title={title}
+        onOffAccordion={onOffAccordion}
+      />
+      {!collapsed && <UncontrolledAccordionBody />}
     </>
   );
 };
