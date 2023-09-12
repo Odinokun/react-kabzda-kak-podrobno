@@ -1,11 +1,11 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 
 interface IProps {
-  status: boolean;
-  onClick: (switchOn: boolean) => void;
+  // status: boolean;
 }
 
-export const OnOff: FC<IProps> = ({status, onClick}) => {
+export const UncontrolledOnOff: FC<IProps> = () => {
+  const [on, setOn] = useState<boolean>(false);
 
   const onStyle = {
     width: '30px',
@@ -13,7 +13,7 @@ export const OnOff: FC<IProps> = ({status, onClick}) => {
     border: '1px solid black',
     display: 'inline-block',
     padding: '2px',
-    backgroundColor: status ? 'green' : 'white',
+    backgroundColor: on ? 'green' : 'white',
   };
 
   const offStyle = {
@@ -23,7 +23,7 @@ export const OnOff: FC<IProps> = ({status, onClick}) => {
     display: 'inline-block',
     marginLeft: '2px',
     padding: '2px',
-    backgroundColor: status ? 'white' : 'red',
+    backgroundColor: on ? 'white' : 'red',
   };
 
   const indicatorStyle = {
@@ -33,18 +33,18 @@ export const OnOff: FC<IProps> = ({status, onClick}) => {
     border: '1px solid black',
     display: 'inline-block',
     marginLeft: '5px',
-    backgroundColor: status ? 'green' : 'red',
+    backgroundColor: on ? 'green' : 'red',
   };
 
   return (
     <div>
-      <button style={ onStyle } onClick={ () => onClick(true) }>
+      <button style={ onStyle } onClick={ () => setOn(true) }>
         On
       </button>
-      <button style={ offStyle } onClick={ () => onClick(false) }>
+      <button style={ offStyle } onClick={ () => setOn(false) }>
         Off
       </button>
-      <div style={ indicatorStyle }>{ status ? 'On' : 'Off' }</div>
+      <div style={ indicatorStyle }>{ on ? 'On' : 'Off' }</div>
     </div>
   );
 };

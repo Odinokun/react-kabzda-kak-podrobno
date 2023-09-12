@@ -6,19 +6,16 @@ interface IProps {
   title: string;
 }
 
-export const UncontrolledAccordion: FC<IProps> = ({ title }) => {
+export const UncontrolledAccordion: FC<IProps> = ({title}) => {
   const [collapsed, setCollapsed] = useState(true);
-  const onOffAccordion = () => {
-    setCollapsed(!collapsed);
-  };
 
   return (
     <>
       <UncontrolledAccordionTitle
-        title={title}
-        onOffAccordion={onOffAccordion}
+        title={ title }
+        onClick={ () => setCollapsed(!collapsed) }
       />
-      {!collapsed && <UncontrolledAccordionBody />}
+      { !collapsed && <UncontrolledAccordionBody/> }
     </>
   );
 };

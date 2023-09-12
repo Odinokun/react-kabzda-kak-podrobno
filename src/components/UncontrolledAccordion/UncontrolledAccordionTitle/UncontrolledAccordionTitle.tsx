@@ -2,12 +2,12 @@ import React, { FC } from 'react';
 
 interface IProps {
   title: string;
-  onOffAccordion: () => void;
+  onClick: () => void;
 }
 
 export const UncontrolledAccordionTitle: FC<IProps> = ({
-  title,
-  onOffAccordion,
-}) => {
-  return <h3 onClick={onOffAccordion}>{title}</h3>;
+                                                         title,
+                                                         onClick,
+                                                       }) => {
+  return <h3 onClick={ onClick }>{ title }</h3>;
 };
