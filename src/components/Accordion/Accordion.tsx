@@ -9,14 +9,14 @@ type AccordionPropsType = {
 };
 
 export const Accordion: FC<AccordionPropsType> = ({
-                                                    title,
-                                                    collapsed,
-                                                    onClick,
-                                                  }) => {
+  title,
+  collapsed,
+  onClick,
+}) => {
   return (
     <>
-      <AccordionTitle title={ title } collapsed={ collapsed } onClick={ onClick }/>
-      { !collapsed && <AccordionBody/> }
+      <AccordionTitle title={title} collapsed={collapsed} onClick={onClick} />
+      {!collapsed && <AccordionBody />}
     </>
   );
 };
