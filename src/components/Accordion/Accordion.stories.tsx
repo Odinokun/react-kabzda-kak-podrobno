@@ -1,34 +1,39 @@
-// Accordion.stories.ts|tsx
-import type { Meta, StoryObj } from '@storybook/react';
+//Accordion.stories.ts/tsx
+import { useState } from 'react';
 import { action } from '@storybook/addon-actions';
 
 import { Accordion } from './Accordion';
 
-const meta: Meta<typeof Accordion> = {
+export default {
+  title: 'Accordion stories',
   component: Accordion,
 };
 
-export default meta;
+const callback = action('accordion mode change event fired');
 
-// BEGIN new sintaxis
-type Story = StoryObj<typeof Accordion>;
+export const CollapsedMode = () => (
+  <Accordion
+    title={'Collapsed Accordion'}
+    collapsed={true}
+    onClick={callback}
+  />
+);
 
-export const FirstStory: Story = {
-  args: {
-    title: 'Accordion Story',
-    collapsed: false,
-  },
-};
-// END new sintaxis
+export const UncollapsedMode = () => (
+  <Accordion
+    title={'Uncollapsed Accordion'}
+    collapsed={false}
+    onClick={callback}
+  />
+);
 
-const onChangeCallback = action('Accordion mode change event fired');
-
-export const AccordionExample = () => {
+export const ModeChanging = () => {
+  const [value, setValue] = useState<boolean>(false);
   return (
     <Accordion
-      title='Accordion #1'
-      collapsed={false}
-      onClick={onChangeCallback}
+      title={'ModeChanging Accordion'}
+      collapsed={value}
+      onClick={setValue}
     />
   );
 };
