@@ -1,12 +1,11 @@
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
 
 interface IProps {
-  // status: boolean;
 }
 
 export const UncontrolledOnOff: FC<IProps> = () => {
-  const [on, setOn] = useState<boolean>(false);
-
+  const [on, setOn] = React.useState<boolean>(true);
+  
   const onStyle = {
     width: '30px',
     height: '20px',
@@ -15,7 +14,7 @@ export const UncontrolledOnOff: FC<IProps> = () => {
     padding: '2px',
     backgroundColor: on ? 'green' : 'white',
   };
-
+  
   const offStyle = {
     width: '30px',
     height: '20px',
@@ -25,7 +24,7 @@ export const UncontrolledOnOff: FC<IProps> = () => {
     padding: '2px',
     backgroundColor: on ? 'white' : 'red',
   };
-
+  
   const indicatorStyle = {
     width: '10px',
     height: '10px',
@@ -35,16 +34,16 @@ export const UncontrolledOnOff: FC<IProps> = () => {
     marginLeft: '5px',
     backgroundColor: on ? 'green' : 'red',
   };
-
+  
   return (
     <div>
-      <button style={ onStyle } onClick={ () => setOn(true) }>
+      <button style={onStyle} onClick={() => setOn(true)}>
         On
       </button>
-      <button style={ offStyle } onClick={ () => setOn(false) }>
+      <button style={offStyle} onClick={() => setOn(false)}>
         Off
       </button>
-      <div style={ indicatorStyle }>{ on ? 'On' : 'Off' }</div>
+      <div style={indicatorStyle}>{on ? 'On' : 'Off'}</div>
     </div>
   );
 };

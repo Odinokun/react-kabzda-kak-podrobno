@@ -1,11 +1,10 @@
-//Accordion.stories.ts/tsx
 import { useState } from 'react';
 import { action } from '@storybook/addon-actions';
 
 import { Accordion } from './Accordion';
 
 export default {
-  title: 'Accordion stories',
+  title: 'Accordion',
   component: Accordion,
 };
 
