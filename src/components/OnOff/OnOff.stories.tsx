@@ -1,11 +1,10 @@
-// OnOff.stories.ts/tsx
 import { useState } from 'react';
 import { action } from '@storybook/addon-actions';
 
 import { OnOff } from './OnOff';
 
 export default {
-  title: 'OnOff stories',
+  title: 'OnOff',
   component: OnOff,
 };
 
